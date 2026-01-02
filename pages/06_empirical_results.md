@@ -1,7 +1,6 @@
 ## Results: Load Time
 
 <TwoColAnimated :active="$clicks >= 1">
-  
   <template #left>
     <span v-click> 
         <strong>General</strong>
@@ -42,97 +41,134 @@
 </TwoColAnimated>
 
 
-<!-- <div class="content h-full" :class="{ active: $clicks >= 1 }">
-    <div class="flex flex-col items-center justify-center description gap-4">
-        <span v-click> 
-            <strong>General</strong>
-            <ul>
-                <li>Load Time of dynamic VMs <strong>orders of magnitude</strong> higher</li>
-                <li><strong>Reason:</strong> Bytecode compilation overhead</li>
-            </ul>
-        </span>
-        <span v-click> 
-            <strong>Dynamic VMs:</strong>
-            <ul>
-                <li>Micropython least performant</li>
-                <li><strong>Reason:</strong> JerryScript and Lua emit bytecode directly</li>
-            </ul>
-        </span>
-        <span v-click> 
-            <strong>Static VMs:</strong> 
-            <ul>
-                <li>eBPF based are faster</li>
-                <li><strong>Reason:</strong> WASM file complexity</li>
-                <li>WAMR (fast) longest load time</li>
-                <li><strong>Reason:</strong> custom bytecode format</li>
-            </ul> 
-        </span>
-    </div>
-    <div class="flex items-center justify-center">
-        <div class="relative p-4 rounded-md" style="overflow: hidden">
-            <Spotlight 
-                active 
-                v-click
-                :x="13" 
-                :y="24" 
-                :w="2.5" 
-                :h="60" 
-            />
-            <img src="../assets/load_time.png" width="100%"/>
-        </div>
-    </div>
-</div>
-
-<style>
-img {
-    object-fit: contain;
-}
-
-.content {
-    display: grid;
-    gap: 4px;
-    grid-template-columns: 0fr 1fr;
-    transition: grid-template-columns 0.5s ease-in-out;
-}
-
-.content.active {
-    grid-template-columns: 1fr 4fr;
-}
-
-.description {
-    font-size: 10px;
-    min-width: 0;
-    min-height: 0;
-}
-
-.active .description :first-child {
-    transition: opacity 0.4s ease-out 0.4s;
-}
-</style> -->
-
 ---
 
 ## Results: Execution Time
 
-<img class="mt-16" src="../assets/execution_time_to_native.png"/>
+<TwoColAnimated :active="$clicks >= 1">
+    <template #left>
+        <span v-click>
+            <strong>General</strong>
+            <ul>
+                <li>HLL VMs impose significant slowdown (16x at best)</li>
+                <li>WAMR (fast) most efficient (24x avg)</li>
+                <li>Dynamic VMs are slower than static VMs</li>
+            </ul>
+        </span>
+        <span v-click>
+            <strong>Dynamic VMs</strong>
+            <ul>
+                <li>Lua is the fastest</li>
+                <li>...except for string heavy operations</li>
+            </ul>
+        </span>
+        <span v-click>
+            <strong>Static VMs</strong>
+            <ul>
+                <li>WAMR (fast) ~2.4x faster than WAMR</li>
+                <li>Femto container ~2.1x faster than µBPF</li>
+            </ul>
+        </span>
+    </template>
+    <template #right>
+        <img src="../assets/execution_time_to_native.png"/>
+    </template>
+</TwoColAnimated>
 
 ---
 
 ## Results: Code Size
 
-<div class="flex items-center justify-center mt-16">
-    <img src="../assets/code_size.png" width="85%"/>
-</div>
+<TwoColAnimated :active="$clicks >= 1">
+    <template #left>
+    <span v-click>
+        <strong>General</strong>
+        <ul>
+            <li>Bytecode encoding more efficient than text based</li>
+            <li><strong>ud exception</strong>: eBPF overhead due to spill code + 32-bit cast</li>
+        </ul>
+    </span>
+    <span v-click>
+        <strong>Static VMs</strong>
+        <ul>
+            <li>WASM more efficient than eBPF</li>
+        </ul>
+    </span>
+    </template>
+    <template #right>
+        <img src="../assets/code_size.png"/>
+    </template>
+</TwoColAnimated>
+
 
 
 ---
 
 ## Results: Flash footprint
 
-<img class="mt-16" src="../assets/flash_memory.png" />
+<TwoColAnimated :active="$clicks >= 1">
+    <template #left>
+        <span v-click>
+            <strong>General</strong>
+            <ul>
+               <li>Dynamic VMs occupy more space</li> 
+            </ul>
+        </span>
+        <!-- <span v-click>
+            <strong>RFC 7228</strong>
+            <ul>
+                <li>Class 0: Femto-Container</li>
+                <li>Class 1: µBPF, WAMR, WAMR (fast)</li>
+                <li>Class 2: JerryScript, MicroPyton, Lua</li>
+            </ul>
+        </span> -->
+        <span v-click>
+            <strong>Dynamic VMs</strong>
+            <ul>
+                <li>JerryScript crc_32: es.next modul</li>
+                <li>Lua does not offer conditional module inclusion</li>
+            </ul>
+        </span>
+        <span v-click>
+            <strong>Static VMs</strong>
+            <ul>
+                <li>µBPF overhead: more features</li>
+                <li>WAMR (fast) slight overhead over WAMR</li>
+            </ul>
+        </span>
+    </template>
+    <template #right>
+        <img src="../assets/flash_memory.png" />
+    </template>
+</TwoColAnimated>
 
 ---
 
 ## Results: RAM usage
 
-<img class="mt-16" src="../assets/RAM_usage.png" />
+<TwoColAnimated :active="$clicks >= 1">
+    <template #left>
+        <span v-click>
+            <strong>General</strong>
+            <ul>
+                <li>Dynamic VMs incure highest RAM (data duplication)</li>
+            </ul>
+        </span>
+        <span v-click>
+            <strong>Dynamic VMs</strong>
+            <ul>
+                <li>Lua has overall highest footprint</li>
+            </ul>
+        </span>
+        <span v-click>
+            <strong>Static VMs</strong>
+            <ul>
+                <li>WAMR requries relatively high RAM</li>
+                <li>eBPF based VMs are the most RAM friendly</li>
+            </ul>
+        </span>
+    </template>
+    <template #right>
+        <img class="mt-16" src="../assets/RAM_usage.png" />
+    </template>
+</TwoColAnimated>
