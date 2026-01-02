@@ -1,0 +1,16 @@
+.slidev-layout.two-columns {
+  align-content: center;
+}
+
+.slidev-layout.two-cols-header {
+  grid-template-rows: auto 1fr !important;
+  gap: 8px;
+}
+
+.slidev-layout h1 + p {
+  opacity: 1.0
+}
+
+.slidev-layout.full {
+  padding: 0 !important;
+}
