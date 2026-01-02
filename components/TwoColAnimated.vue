@@ -41,7 +41,6 @@ defineProps({
 
   /* Layout for the content inside */
   display: flex;
-  align-items: center;
   justify-content: center;
 
   flex-direction: column;
