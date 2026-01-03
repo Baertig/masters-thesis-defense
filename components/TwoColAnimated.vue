@@ -4,6 +4,10 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  isImage: {
+    type: Boolean,
+    default: true,
+  }
 });
 </script>
 
@@ -14,9 +18,10 @@ defineProps({
     </div>
 
     <div class="image-col">
-      <div class="image-wrapper">
+      <div v-if="isImage" class="image-wrapper">
         <slot name="right"></slot>
       </div>
+      <slot v-else name="right"></slot>
     </div>
   </div>
 </template>
