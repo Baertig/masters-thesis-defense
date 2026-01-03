@@ -1,11 +1,29 @@
 <script setup>
-defineProps({
-  x: { type: Number, default: 10 }, // Left position (%)
-  y: { type: Number, default: 10 }, // Top position (%)
-  w: { type: Number, default: 30 }, // Width of cutout (%)
-  h: { type: Number, default: 20 }, // Height of cutout (%)
-  active: { type: Boolean, default: false }, // Toggle the effect
+import { computed } from 'vue';
+
+const props = defineProps({
+  x: { type: Array, default: () => [10] }, // Left position (%)
+  y: { type: Array, default: () => [10] }, // Top position (%)
+  w: { type: Array, default: () => [30] }, // Width of cutout (%)
+  h: { type: Array, default: () => [20] }, // Height of cutout (%)
+  activeClicks: { type: Array, default: () => [1] }, // Toggle the effect
 });
+
+const active = computed(() => props.activeClicks.includes($clicks.value))
+
+const idx = computed(() => {
+  const idx = props.activeClicks.indexOf($clicks.value)
+  if (idx !== -1) return idx;
+
+  // return the index of the next smaller element
+  // assume that the array is sorted, starting with the smallest element
+  return props.activeClicks.reduce((acc, val, idx) => {
+    if (val < $clicks.value) return idx;
+
+    return acc;
+  }, 0);
+})
+
 </script>
 
 <template>
@@ -13,10 +31,10 @@ defineProps({
     class="spotlight-cutout"
     :class="{ active }"
     :style="{
-      top: y + '%',
-      left: x + '%',
-      width: w + '%',
-      height: h + '%',
+      top: y[idx] + '%',
+      left: x[idx] + '%',
+      width: w[idx] + '%',
+      height: h[idx] + '%',
     }"
   ></div>
 </template>
@@ -29,7 +47,9 @@ defineProps({
 
   /* Initial State (Invisible) */
   opacity: 0;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  /*A shadow so big it covers the container */
+  /* 0 offset, 0 blur, spread radius 200vmax (huge) */
+  box-shadow: 0 0 0 200vmax rgba(0, 0, 0, 0.7);
 
   /* Smoothly animate position and the fade-in */
   transition: opacity 0.5s ease, top 0.5s ease, left 0.5s ease, width 0.5s ease,
@@ -38,8 +58,5 @@ defineProps({
 
 .spotlight-cutout.active {
   opacity: 1;
-  /* The Magic: A shadow so big it covers the container */
-  /* 0 offset, 0 blur, spread radius 200vmax (huge) */
-  box-shadow: 0 0 0 200vmax rgba(0, 0, 0, 0.7);
 }
 </style>

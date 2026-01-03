@@ -9,7 +9,7 @@
             <li><strong>Reason:</strong> Bytecode compilation overhead</li>
         </ul>
     </span>
-    <span v-click> 
+    <span v-click="'+2'"> 
         <strong>Dynamic VMs:</strong>
         <ul>
             <li>Micropython least performant</li>
@@ -28,13 +28,13 @@
   </template>
 
   <template #right>
-    <!-- <Spotlight 
-        :active="$clicks === 2" 
-        :x="13" 
-        :y="24" 
-        :w="2.5" 
-        :h="60" 
-    /> -->
+    <Spotlight 
+        :active-clicks="[2]" 
+        :x="[48]" 
+        :y="[9]" 
+        :w="[19]" 
+        :h="[84]" 
+    />
     <img src="../assets/load_time.png" />
   </template>
 
@@ -55,7 +55,7 @@
                 <li>Dynamic VMs are slower than static VMs</li>
             </ul>
         </span>
-        <span v-click>
+        <span v-click="'+3'">
             <strong>Dynamic VMs</strong>
             <ul>
                 <li>Lua is the fastest</li>
@@ -71,6 +71,13 @@
         </span>
     </template>
     <template #right>
+        <Spotlight 
+            :active-clicks="[2,3]" 
+            :x="[84,94.7]" 
+            :y="[5,70]" 
+            :w="[13.5,2.5]" 
+            :h="[86, 20]" 
+        />
         <img src="../assets/execution_time_to_native.png"/>
     </template>
 </TwoColAnimated>
@@ -172,3 +179,7 @@
         <img class="mt-16" src="../assets/RAM_usage.png" />
     </template>
 </TwoColAnimated>
+
+<!--
+Why is µBPF only blue? all allocations are done on the system stack / this could only be assigned one label. It is not precise.
+-->
