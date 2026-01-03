@@ -12,7 +12,7 @@ layout: two-cols-header
 <div class="py-8" />
 
 **Taxonomy** by J. E. Smith and Nair (2005)
-<div class="grid grid-cols-3 gap-x-4 gap-y-8 text-center">
+<div class="taxonomy grid gap-x-4 gap-y-8 text-center">
     <div class="border rounded-md py-2">Same ISA</div>
     <div class="py-2">vs.</div>
     <div class="border rounded-md py-2">Different ISA</div>
@@ -27,6 +27,11 @@ layout: two-cols-header
 </div>
 
 <style>
+.taxonomy {
+    grid-template-columns: 1fr auto 1fr;
+    width: 70%;
+}
+
 p:first-child {
     margin-bottom: 2px;
 }
