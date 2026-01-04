@@ -8,6 +8,7 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@iconify-json/logos": "^1.2.10",
     "@iconify-json/material-symbols": "^1.2.50",
     "@slidev/cli": "^52.11.1",
     "@slidev/theme-default": "latest",
