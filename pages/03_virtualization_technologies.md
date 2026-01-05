@@ -42,7 +42,7 @@ p:first-child {
 }
 </style>
 
-<!-- **ISA:** memory model + instruction (e.g. add, sub, ...) | **Same** => more efficient, but hardware isolation mechanisma -->
+<!-- **ISA:** memory model + instruction (e.g. add, sub, ...) | **Same** => more efficient, but hardware isolation mechanism -->
 
 
 ---

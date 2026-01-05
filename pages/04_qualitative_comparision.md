@@ -4,7 +4,7 @@ layout: full
 
 <div class="container">
     <div class="heading">
-        <h2>Qualitative Comparision</h2>
+        <h2>Qualitative Comparison</h2>
     </div>
     <div class="agenda">
         <ol>
@@ -15,7 +15,7 @@ layout: full
     </div>
 </div>
 
-<!--**Comparision** Based on the Implemented Features, **Table:** cannot cover all of it => focus on *key* insights.-->
+<!--**Comparison** Based on the Implemented Features, **Table:** cannot cover all of it => focus on *key* insights.-->
 
 <style>
 .heading {
@@ -100,7 +100,7 @@ ol > li {
 hideInToc: true
 ---
 
-## Qualitative Comparision Summary
+## Qualitative Comparison Summary
 
 <TwoColAnimated :active="$clicks >= 1" :is-image="false" style="height: 92%">
     <template #left>

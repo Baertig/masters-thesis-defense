@@ -6,7 +6,7 @@ layout: two-cols-header
 
 ::left::
 
-**Qualitative Comparision**
+**Qualitative Comparison**
 
 Universal Features: 
 - Portability

@@ -13,8 +13,8 @@ Deployment Domains:
     <div class="domain"><material-symbols-watch-screentime />Wearables</div>
     <div class="domain"><material-symbols-house />Smart Home</div>
     <div class="domain"><material-symbols-health-metrics />Health Care</div>
-    <div class="domain"><material-symbols-factory />Manifacturing</div>
-    <div class="domain"><material-symbols-agriculture /> <span>Agricalture</span></div>
+    <div class="domain"><material-symbols-factory />Manufacturing</div>
+    <div class="domain"><material-symbols-agriculture /> <span>Agriculture</span></div>
     <div class="domain">...</div>
 </div>
 
@@ -29,7 +29,7 @@ Deployment Domains:
 <span class="absolute bottom-12 right-2 text-xs max-w-md">Data from: IoT Analytics (Oct. 2025). State of IoT 2025. en-US. URL: https://iot-analytics.com/number-connected-iot-devices/ (visited on 11/25/2025).</span>
 
 
-<!-- limited ressources 10kb to view hundered RAM; limited capabilies| From simple sensor value reading to **installing third-party** Apps during runtime -->
+<!-- limited resources 10kb to view hundred RAM; limited capabilities| From simple sensor value reading to **installing third-party** Apps during runtime -->
 <style>
  .domain {
     text-align: center;
@@ -135,7 +135,7 @@ hide: false
 
 <div class="goals grid grid-cols-3 gap-8">
     <div><img src="../assets/classify_approaches.png" /><span>Classify virtualization approaches</span></div>
-    <div><img src="../assets/comparision_properties.png" /><span>Find relevant Comparision Properties</span></div>
+    <div><img src="../assets/comparision_properties.png" /><span>Find relevant Comparison Properties</span></div>
     <div><img src="../assets/identify_tradeoffs.png" /><span>Identify Trade-offs</span></div>
 </div>
 
@@ -143,7 +143,7 @@ hide: false
 
 <strong>Method:</strong>
 <div class="method">
-    <div class="step"> 1. Qualitative Feature Comparision </div>
+    <div class="step"> 1. Qualitative Feature Comparison </div>
     <div class="flex items-center justify-center">
         <material-symbols-keyboard-arrow-right class="text-4xl"/>
     </div>
@@ -185,6 +185,6 @@ hide: false
 </style>
 
 <!--
-**Qualitative** comparision on the provided capabilites of a broad set of virtualization technologies.
+**Qualitative** comparison on the provided capabilities of a broad set of virtualization technologies.
 **Empirical:** Quantify the Performance Overhead
 -->

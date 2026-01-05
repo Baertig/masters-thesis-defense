@@ -271,7 +271,7 @@ layout: full
     </div>
 </div>
 
-<!--**Comparision** Based on the Implemented Features, **Table:** cannot cover all of it => focus on *key* insights.-->
+<!--**Comparison** Based on the Implemented Features, **Table:** cannot cover all of it => focus on *key* insights.-->
 
 <style>
 .heading {
