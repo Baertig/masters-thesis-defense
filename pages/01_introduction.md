@@ -26,7 +26,7 @@ Deployment Domains:
     <img src="../assets/connected_devices_forcast.png" width="400px"/>
 </div>
 
-<span class="absolute bottom-10 right-2 text-xs max-w-md">Analytics, IoT (Oct. 2025). State of IoT 2025. en-US. URL: https://iot-analytics.com/number-connected-iot-devices/ (visited on 11/25/2025).</span>
+<span class="absolute bottom-12 right-2 text-xs max-w-md">Data from: IoT Analytics (Oct. 2025). State of IoT 2025. en-US. URL: https://iot-analytics.com/number-connected-iot-devices/ (visited on 11/25/2025).</span>
 
 
 <!-- limited ressources 10kb to view hundered RAM; limited capabilies| From simple sensor value reading to **installing third-party** Apps during runtime -->
@@ -76,7 +76,7 @@ layout: full
             <div class="deployment"> <material-symbols-house />Tizen Project</div>
         </div>
         <div>
-            <div class="research"> <material-symbols-table /> Lack of comprehensive Evaluations</div>
+            <div class="research"> <material-symbols-search /> Lack of comprehensive Evaluations</div>
         </div>
     </div>
 </div>
@@ -128,19 +128,30 @@ layout: full
 -->
 
 ---
+hide: false
+---
 
 ## Research Goals
 
-<div class="goals grid grid-cols-3 gap-8 m-t-8">
+<div class="goals grid grid-cols-3 gap-8">
     <div><img src="../assets/classify_approaches.png" /><span>Classify virtualization approaches</span></div>
     <div><img src="../assets/comparision_properties.png" /><span>Find relevant Comparision Properties</span></div>
     <div><img src="../assets/identify_tradeoffs.png" /><span>Identify Trade-offs</span></div>
 </div>
 
-<div class="method grid grid-cols-2 gap-32">
-    <div class="p-8"> 1. Qualitative Feature Comparision </div>
-    <div class="p-8"> 2. Empirical Evaluation on RIOT OS </div>
+<v-click>
+
+<strong>Method:</strong>
+<div class="method">
+    <div class="step"> 1. Qualitative Feature Comparision </div>
+    <div class="flex items-center justify-center">
+        <material-symbols-keyboard-arrow-right class="text-4xl"/>
+    </div>
+    <div class="step"> 2. Empirical Evaluation on RIOT OS </div>
 </div>
+
+</v-click>
+
 
 <style>
     .goals div {
@@ -150,24 +161,30 @@ layout: full
         justify-content: start;
         gap: 32px;
         align-items: center;
-        padding: 32px 0;
+        padding: 32px;
     }
+
     .goals div img {
         height: 120px;
         width: auto;
     }
 
-    .method div {
+    .method {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 32px;
+    }
+
+    .method .step {
         background-color: var(--blau-1);
         border-radius: 8px;
         color: var(--weiss);
         text-align: center;
+        padding: 16px;
     }
 </style>
 
 <!--
-**Qualitative** comparision on the provided features of a broad set of virtualization technologies.
-**Empirical:** At what performance level are these features offered for each candidate.  
+**Qualitative** comparision on the provided capabilites of a broad set of virtualization technologies.
+**Empirical:** Quantify the Performance Overhead
 -->
-
-    
