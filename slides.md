@@ -29,11 +29,11 @@ hideInToc: true
 
 1. Introduction
 2. Background
-    1. RIOT OS
-    2. Virtualization
 3. Qualitative Comparision
 4. Empirical Evaluation
 5. Conclusion & Outlook
+
+<!--**Backround:** Context on Virtuaization approaches-->
 
 ---
 src: ./pages/01_introduction.md
@@ -65,6 +65,10 @@ src: ./pages/07_conclusion_and_outlook.md
 
 ---
 src: ./pages/08_sources.md
+---
+
+---
+src: ./pages/09_appendix.md
 ---
 
 

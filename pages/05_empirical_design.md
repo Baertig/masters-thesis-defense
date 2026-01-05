@@ -9,11 +9,15 @@ layout: full
     <div class="agenda">
         <ol>
             <li>Candidate Introduction </li>
-            <li>HLL VM Architecture </li>
             <li>Classification </li>
-            <li>Experiment Design </li>
-            <li>Implementation </li>
-            <li>Results </li>
+            <li>HLL VM Architecture </li>
+            <li>Experiment 
+                <ol>
+                    <li>Design</li>
+                    <li>Implementation</li>
+                    <li>Results</li>
+                </ol>
+            </li>
         </ol>
     </div>
 </div>
@@ -35,10 +39,6 @@ layout: full
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-ol > li {
-    margin-bottom: 12px;
 }
 
 .container {
@@ -89,71 +89,7 @@ ol > li {
 </style>
 
 ---
-
-## Fundamental HLL VM Architecture
-
-<div class="m-t-16 flex items-center justify-center">
-    <img src="../assets/VM architecture.png" width="500px"/>
-</div>
-
----
-
-### Execution Model (Addition)
-
-<div class="flex flex-col gap-4 mt-4">
-    <strong>Stack based</strong>
-    <img src="../assets/stack-based.svg" width="700px" class="mb-8 self-center"/>
-    <strong>Register based</strong>
-    <img src="../assets/register-based.svg" width="700px" class="self-center"/>
-</div>
-
----
-
-### Dispatch Mechanism
-
-<div class="mt-4 grid grid-cols-3 gap-12 relative">
-<div> 
-
-**Switch Case Dispatch**
-
-<div class="my-16" />
-
-```c
-switch(opcode) {
-    case ADD: 
-        push(op1 + op2);
-    ...
-}
-```
-</div> 
-
-<div>
-
-**Indirect Threaded Dispatch**
-
-<img src="../assets/indirect-threaded-interpretation.svg" width="100%" />
-
-</div>
-
-<div>
-
-**Direct Threaded Dispatch**
-
-<img src="../assets/direct-threaded-interpretation.svg" width="100%" />
-
-</div>
-
-</div>
-
-<style>
-strong {
-    margin-bottom: 20px;
-}
-</style>
-
-
----
-clicks: 5
+clicks: 4
 ---
 
 ## Candidates Classification
@@ -161,17 +97,17 @@ clicks: 5
 <div class="m-t-8" />
 <table style="position: relative">
     <Spotlight 
-        :active-clicks="[1,2,3,4]" 
-        :x="[18, 46, 68, 85]" 
-        :y="[11, 11, 11, 11]" 
-        :w="[27, 19, 9, 6]" 
-        :h="[89, 89, 89, 89]" 
+        :active-clicks="[1,2,3]" 
+        :x="[23.5, 62.5, 82.5]" 
+        :y="[11, 11, 11]" 
+        :w="[39, 10.5, 7]" 
+        :h="[89, 89, 89]" 
     />
     <thead>
         <tr style="border-bottom: 0px">
             <th />
             <th />
-            <th colspan="5" style="text-align: center">Architectural Properties</th> 
+            <th colspan="3" style="text-align: center">Architectural Properties</th> 
             <th colspan="4" style="text-align: center">Feature Counts</th>
         </tr>
         <tr>
@@ -180,8 +116,6 @@ clicks: 5
             <th>Garbage Collection</th>
             <th>Typing</th>
             <th>Bytecode Compilation</th>
-            <th>Exec-Model</th>
-            <th>Dispatch</th>
             <th class="text-center">Development</th>
             <th class="text-center">Operation</th>
             <th class="text-center">Security</th>
@@ -195,8 +129,6 @@ clicks: 5
             <td>Yes</td>
             <td>Dynamic</td>
             <td>On-device</td>
-            <td>Stack</td>
-            <td>Switch-Case</td>
             <td class="text-center"><strong>4/5</strong></td>
             <td class="text-center"><strong>1/3</strong></td>
             <td class="text-center"><strong>1/6</strong></td>
@@ -207,8 +139,6 @@ clicks: 5
             <td>Yes</td>
             <td>Dynamic</td>
             <td>On-Device</td>
-            <td>Stack</td>
-            <td>Switch-Case</td>
             <td class="text-center"><strong>4/5</strong></td>
             <td class="text-center"><strong>1/3</strong></td>
             <td class="text-center"><strong>0/6</strong></td>
@@ -219,8 +149,6 @@ clicks: 5
             <td>Yes</td>
             <td>Dynamic</td>
             <td>On-Device</td>
-            <td>Register</td>
-            <td>Switch-Case</td>
             <td class="text-center"><strong>4/5</strong></td>
             <td class="text-center"><strong>1/3</strong></td>
             <td class="text-center"><strong>3/6</strong></td>
@@ -232,8 +160,6 @@ clicks: 5
             <td>No</td>
             <td>Static</td>
             <td>Off-Device</td>
-            <td>Stack</td>
-            <td>Switch-Case</td>
             <td class="text-center"><strong>3/5</strong></td>
             <td class="text-center"><strong>2/3</strong></td>
             <td class="text-center"><strong>4/6</strong></td>
@@ -244,8 +170,6 @@ clicks: 5
             <td>No</td>
             <td>Static</td>
             <td>Off-Device</td>
-            <td>Register</td>
-            <td>Direct Threaded Interpretation</td>
             <td class="text-center"><strong>3/5</strong></td>
             <td class="text-center"><strong>2/3</strong></td>
             <td class="text-center"><strong>4/6</strong></td>
@@ -256,8 +180,6 @@ clicks: 5
             <td>No</td>
             <td>Static</td>
             <td>Off-Device</td>
-            <td>Register</td>
-            <td>Indirect Threaded Interpretation</td>
             <td class="text-center"><strong>1/5</strong></td>
             <td class="text-center"><strong>1/3</strong></td>
             <td class="text-center"><strong>4/6</strong></td>
@@ -268,8 +190,6 @@ clicks: 5
             <td>No</td>
             <td>Static</td>
             <td>Off-Device</td>
-            <td>Register</td>
-            <td>Switch-Case</td>
             <td class="text-center"><strong>1/5</strong></td>
             <td class="text-center"><strong>2/3</strong></td>
             <td class="text-center"><strong>4/6</strong></td>
@@ -308,6 +228,73 @@ table {
     background-color: var(--rot-2)
 }
 
+</style>
+
+---
+
+## Fundamental HLL VM Architecture
+
+<div class="m-t-16 flex items-center justify-center">
+    <img src="../assets/VM architecture.png" width="500px"/>
+</div>
+
+<!--There is a basic structure, that all of the VMs **share**. Classification + Useful to understand the results later on-->
+
+
+---
+layout: full
+---
+
+<div class="container">
+    <div class="heading">
+        <h2>Experiment</h2>
+    </div>
+    <div class="agenda">
+        <ol>
+            <li><strong>Design</strong>
+                <ol>
+                    <li>Metrics</li>
+                    <li>Benchmark Programms</li>
+                </ol>
+            </li>
+            <li><strong>Measurement Implementation</strong></li>
+            <li><strong>Results</strong>
+                <ol>
+                    <li>Load Time</li>
+                    <li>Execution Time</li>
+                    <li>Code Size</li>
+                    <li>ROM footprint</li>
+                    <li>RAM usage</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<!--**Comparision** Based on the Implemented Features, **Table:** cannot cover all of it => focus on *key* insights.-->
+
+<style>
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: var(--blau-2);
+}
+
+.agenda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    height: 100%;
+}
 </style>
 
 ---
