@@ -1,5 +1,6 @@
 ---
 layout: two-cols-header
+hide: true
 ---
 
 # RIOT OS
