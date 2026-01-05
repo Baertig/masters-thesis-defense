@@ -28,6 +28,8 @@ Deployment Domains:
 
 <span class="absolute bottom-10 right-2 text-xs max-w-md">Analytics, IoT (Oct. 2025). State of IoT 2025. en-US. URL: https://iot-analytics.com/number-connected-iot-devices/ (visited on 11/25/2025).</span>
 
+
+<!-- limited ressources 10kb to view hundered RAM; limited capabilies| From simple sensor value reading to **installing third-party** Apps during runtime -->
 <style>
  .domain {
     text-align: center;
