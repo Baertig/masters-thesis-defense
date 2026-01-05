@@ -1,3 +1,7 @@
+---
+clicks: 3
+---
+
 ## Results: Load Time
 
 <TwoColAnimated :active="$clicks >= 1">
@@ -7,7 +11,7 @@
         <ul>
             <li>Load Time of dynamic VMs <strong>orders of magnitude</strong> higher</li>
             <li><strong>Reason:</strong> Bytecode compilation overhead</li>
-            <li>WAMR (fast) longest load time of **static VMs**</li>
+            <li>WAMR (fast) longest load time of <strong>static VMs</strong></li>
         </ul>
     </span>
   </template>
@@ -27,6 +31,8 @@
 
 
 ---
+clicks: 4
+---
 
 ## Results: Execution Time
 
@@ -37,7 +43,7 @@
             <ul>
                 <li>HLL VMs impose significant slowdown (16x at best)</li>
                 <li>WAMR (fast) most efficient (24x avg)</li>
-                <li>Dynamic VMs are **slower** than static VMs</li>
+                <li>Dynamic VMs are slower than static VMs</li>
                 <li>Lua is the fastest of the dynamic VMs (~60x), except for string operations</li>
             </ul>
         </span>
