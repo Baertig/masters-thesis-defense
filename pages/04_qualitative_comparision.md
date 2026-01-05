@@ -1,5 +1,52 @@
+---
+layout: full
+---
 
-# Qualitative Comparision
+<div class="container">
+    <div class="heading">
+        <h2>Qualitative Comparision</h2>
+    </div>
+    <div class="agenda">
+        <ol>
+            <li>Feature Categories</li>
+            <li>Summary Table</li>
+            <li>Key Insights</li>
+        </ol>
+    </div>
+</div>
+
+<!--**Comparision** Based on the Implemented Features, **Table:** cannot cover all of it => focus on *key* insights.-->
+
+<style>
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: var(--blau-2);
+}
+
+.agenda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ol > li {
+    margin-bottom: 12px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    height: 100%;
+}
+</style>
+---
+
+## Feature Categories
 
 <div class="grid grid-cols-2 gap-4 m-t-8 categories">
     <div>
@@ -7,7 +54,7 @@
         <strong class="font-center">Development</strong>
         <ul>
             <li>Automatic Memory Management</li>
-            <li>Portability of the Executable,...</li>
+            <li>...</li>
         </ul>
     </div>
     <div>
@@ -15,7 +62,7 @@
         <strong>Operational</strong>
         <ul>
             <li>Updates At Runtime</li>
-            <li>Remote Management,...</li>
+            <li>...</li>
         </ul>
     </div>
     <div>
@@ -23,7 +70,7 @@
         <strong>Security</strong>
         <ul>
             <li>Address Space Isolation</li>
-            <li>Memory Usage Configuration,...</li>
+            <li>...</li>
         </ul>
     </div>
     <div>
@@ -31,7 +78,7 @@
         <strong>Compilation Modes</strong>
         <ul>
             <li>JIT Compilation</li>
-            <li>AOT Compilation,...</li>
+            <li>...</li>
         </ul>
     </div>
 </div>
