@@ -6,16 +6,12 @@ layout: two-cols-header
 
 ::left::
 
-<v-click >
-
 **Qualitative Comparision**
 
 Universal Features: 
 - Portability
 - Updates at Runtime
 - Memory Isolation
-
-</v-click>
 
 <v-click at="3">
 
