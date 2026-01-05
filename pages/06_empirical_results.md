@@ -3,27 +3,12 @@
 <TwoColAnimated :active="$clicks >= 1">
   <template #left>
     <span v-click> 
-        <strong>General</strong>
+        <strong>Key Insights</strong>
         <ul>
             <li>Load Time of dynamic VMs <strong>orders of magnitude</strong> higher</li>
             <li><strong>Reason:</strong> Bytecode compilation overhead</li>
+            <li>WAMR (fast) longest load time of **static VMs**</li>
         </ul>
-    </span>
-    <span v-click="'+2'"> 
-        <strong>Dynamic VMs:</strong>
-        <ul>
-            <li>Micropython least performant</li>
-            <li><strong>Reason:</strong> JerryScript and Lua emit bytecode directly</li>
-        </ul>
-    </span>
-    <span v-click> 
-        <strong>Static VMs:</strong> 
-        <ul>
-            <li>eBPF based are faster</li>
-            <li><strong>Reason:</strong> WASM file complexity</li>
-            <li>WAMR (fast) longest load time</li>
-            <li><strong>Reason:</strong> custom bytecode format</li>
-        </ul> 
     </span>
   </template>
 
@@ -48,25 +33,12 @@
 <TwoColAnimated :active="$clicks >= 1">
     <template #left>
         <span v-click>
-            <strong>General</strong>
+            <strong>Key Insights</strong>
             <ul>
                 <li>HLL VMs impose significant slowdown (16x at best)</li>
                 <li>WAMR (fast) most efficient (24x avg)</li>
-                <li>Dynamic VMs are slower than static VMs</li>
-            </ul>
-        </span>
-        <span v-click="'+3'">
-            <strong>Dynamic VMs</strong>
-            <ul>
-                <li>Lua is the fastest</li>
-                <li>...except for string heavy operations</li>
-            </ul>
-        </span>
-        <span v-click>
-            <strong>Static VMs</strong>
-            <ul>
-                <li>WAMR (fast) ~2.4x faster than WAMR</li>
-                <li>Femto container ~2.1x faster than µBPF</li>
+                <li>Dynamic VMs are **slower** than static VMs</li>
+                <li>Lua is the fastest of the dynamic VMs (~60x), except for string operations</li>
             </ul>
         </span>
     </template>
@@ -89,16 +61,10 @@
 <TwoColAnimated :active="$clicks >= 1">
     <template #left>
     <span v-click>
-        <strong>General</strong>
+        <strong>Key Insights</strong>
         <ul>
             <li>Bytecode encoding more efficient than text based</li>
-            <li><strong>ud exception</strong>: eBPF overhead due to spill code + 32-bit cast</li>
-        </ul>
-    </span>
-    <span v-click>
-        <strong>Static VMs</strong>
-        <ul>
-            <li>WASM more efficient than eBPF</li>
+            <li>`0x77073096` 4 bytes as 32-bit int vs. 10 bytes in ASCII</li>
         </ul>
     </span>
     </template>
@@ -107,6 +73,7 @@
     </template>
 </TwoColAnimated>
 
+<!--constant from the crc_32 benchmark-->
 
 
 ---
@@ -116,31 +83,10 @@
 <TwoColAnimated :active="$clicks >= 1">
     <template #left>
         <span v-click>
-            <strong>General</strong>
+            <strong>Key Insights</strong>
             <ul>
                <li>Dynamic VMs occupy more space</li> 
-            </ul>
-        </span>
-        <!-- <span v-click>
-            <strong>RFC 7228</strong>
-            <ul>
-                <li>Class 0: Femto-Container</li>
-                <li>Class 1: µBPF, WAMR, WAMR (fast)</li>
-                <li>Class 2: JerryScript, MicroPyton, Lua</li>
-            </ul>
-        </span> -->
-        <span v-click>
-            <strong>Dynamic VMs</strong>
-            <ul>
-                <li>JerryScript crc_32: es.next modul</li>
-                <li>Lua does not offer conditional module inclusion</li>
-            </ul>
-        </span>
-        <span v-click>
-            <strong>Static VMs</strong>
-            <ul>
-                <li>µBPF overhead: more features</li>
-                <li>WAMR (fast) slight overhead over WAMR</li>
+               <li>femto container ~40 Kib lowest footprint</li>
             </ul>
         </span>
     </template>
@@ -149,6 +95,8 @@
     </template>
 </TwoColAnimated>
 
+<!--**Dynamic VMs** include compiler, garbage collection + type handling logic | **femto container** => minimal implementation without data relocations-->
+
 ---
 
 ## Results: RAM usage
@@ -156,22 +104,10 @@
 <TwoColAnimated :active="$clicks >= 1">
     <template #left>
         <span v-click>
-            <strong>General</strong>
+            <strong>Key Insights</strong>
             <ul>
-                <li>Dynamic VMs incure highest RAM (data duplication)</li>
-            </ul>
-        </span>
-        <span v-click>
-            <strong>Dynamic VMs</strong>
-            <ul>
+                <li>Dynamic VMs incur highest RAM (data duplication)</li>
                 <li>Lua has overall highest footprint</li>
-            </ul>
-        </span>
-        <span v-click>
-            <strong>Static VMs</strong>
-            <ul>
-                <li>WAMR requries relatively high RAM</li>
-                <li>eBPF based VMs are the most RAM friendly</li>
             </ul>
         </span>
     </template>
@@ -181,5 +117,6 @@
 </TwoColAnimated>
 
 <!--
+**WAMR**: moderate RAM usage => runtime structures occupy more space  
 Why is µBPF only blue? all allocations are done on the system stack / this could only be assigned one label. It is not precise.
 -->
