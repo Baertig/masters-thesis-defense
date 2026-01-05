@@ -50,3 +50,30 @@ strong {
     margin-bottom: 20px;
 }
 </style>
+
+---
+
+## Bytecode Compilation Pipeline
+
+<div class="flex h-full justify-center items-center">
+    <img src="../assets/Bytecode Compilation Pipeline.svg" width="700px"/>
+</div>
+
+---
+
+## Execution time vs. Heap size 
+
+<div class="flex h-full justify-center items-center">
+    <img src="../assets/heap-increase-benchmark.png" width="600px"/>
+</div>
+
+---
+
+## Minimum Heap size vs Peak Heap Usage
+
+<div class="flex h-full justify-center items-center">
+    <img src="../assets/min_heap_vs_peak_heap.png" width="600px"/>
+</div>
+
+
+
