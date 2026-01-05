@@ -307,7 +307,7 @@ layout: full
     <div>
         <div class="flex flex-col">
             <strong>Compilation</strong>
-            <span><material-symbols-code /> Code Size</span>
+            <span><material-symbols-code />Code Size</span>
         </div>
     </div>
     <div>
@@ -368,6 +368,12 @@ Subset of Embench IoT 2.0
 *Dynamic Memory*
 - md5sum
 - tarfind
+
+::right::
+
+<div class="flex items-center justify-center">
+    <img src="../assets/embench-iot-2-0.png" width="250px" />
+</div>
 
 
 <!--
