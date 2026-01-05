@@ -33,11 +33,7 @@ hideInToc: true
     2. Virtualization
 3. Qualitative Comparision
 4. Empirical Evaluation
-    1. Design
-    2. Implementation
-    3. Results
-5. Conclusion
-6. Outlook
+5. Conclusion & Outlook
 
 ---
 src: ./pages/01_introduction.md
