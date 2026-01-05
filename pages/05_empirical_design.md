@@ -8,14 +8,17 @@ layout: full
     </div>
     <div class="agenda">
         <ol>
-            <li> HLL VM Architecture </li>
-            <li> Candidate Classification </li>
-            <li> Experiment Design </li>
-            <li> Implementation </li>
-            <li> Results </li>
+            <li>Candidate Introduction </li>
+            <li>HLL VM Architecture </li>
+            <li>Classification </li>
+            <li>Experiment Design </li>
+            <li>Implementation </li>
+            <li>Results </li>
         </ol>
     </div>
 </div>
+
+<!--**Design:** Metrics + Benchmark Programms-->
 
 <style>
 .heading {
@@ -47,22 +50,12 @@ ol > li {
 
 ---
 
-## Fundamental HLL VM Architecture
-
-<div class="m-t-16 flex items-center justify-center">
-    <img src="../assets/VM architecture.png" width="500px"/>
-</div>
-
----
-
 ## Candidates
 
-<div :class="{ candidates: true, 'four-rows': $clicks >= 1 }" >
-    <div class="dynamic category" v-click="1">Dynamic managed VMs</div>
-    <div class="dynamic"> <logos-javascript /> JerryScript </div>
+<div class="candidates" >
+    <div class="dynamic"><logos-javascript />JerryScript </div>
     <div class="dynamic"><logos-python />Micropython</div>
     <div class="dynamic"><logos-lua />Lua</div>
-    <div class="static category" v-click.after>Static Low-Level VMs</div>
     <div class="static"><img src="../assets/ebpf-log.svg"/>Femto-Container</div>
     <div class="static"><img src="../assets/ebpf-log.svg"/>µBPF</div>
     <div class="static"><logos-webassembly /><span class="text-center"><strong>W</strong>eb<strong>A</strong>ssembly <strong>M</strong>icro <strong>R</strong>untime</span></div>
@@ -71,46 +64,17 @@ ol > li {
 <style>
 .candidates {
     display: grid;
-    grid-template-columns: 0px 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: 100px;
     transition: grid-template-columns 0.5s ease-in-out;
     margin-top: 60px;
 }
 
-.candidates.four-rows {
-    grid-template-columns: 210px 1fr 1fr 1fr;
-}
-
-.candidates.four-rows .dynamic {
-    background-color: var(--gelb-2)
-}
-
-.candidates.four-rows .static {
-    background-color: var(--rot-2)
-}
-
 .candidates > div {
-    transition: background-color 300ms ease-in-out 0.5s;
     padding: 16px;
 }
 
-.candidates > .category {
-    min-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border-radius: 4px 0 0 4px;
-}
-
-.candidates > div:nth-child(4),
-.candidates > div:last-child {
-    border-radius: 0 4px 4px 0;
-}
-
-.slidev-vclick-target {
-    transition-delay: 400ms;
-}
-
-.candidates > div:not(.category) {
+.candidates > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,6 +87,70 @@ ol > li {
 }
 
 </style>
+
+---
+
+## Fundamental HLL VM Architecture
+
+<div class="m-t-16 flex items-center justify-center">
+    <img src="../assets/VM architecture.png" width="500px"/>
+</div>
+
+---
+
+### Execution Model (Addition)
+
+<div class="flex flex-col gap-4 mt-4">
+    <strong>Stack based</strong>
+    <img src="../assets/stack-based.svg" width="700px" class="mb-8 self-center"/>
+    <strong>Register based</strong>
+    <img src="../assets/register-based.svg" width="700px" class="self-center"/>
+</div>
+
+---
+
+### Dispatch Mechanism
+
+<div class="mt-4 grid grid-cols-3 gap-12 relative">
+<div> 
+
+**Switch Case Dispatch**
+
+<div class="my-16" />
+
+```c
+switch(opcode) {
+    case ADD: 
+        push(op1 + op2);
+    ...
+}
+```
+</div> 
+
+<div>
+
+**Indirect Threaded Dispatch**
+
+<img src="../assets/indirect-threaded-interpretation.svg" width="100%" />
+
+</div>
+
+<div>
+
+**Direct Threaded Dispatch**
+
+<img src="../assets/direct-threaded-interpretation.svg" width="100%" />
+
+</div>
+
+</div>
+
+<style>
+strong {
+    margin-bottom: 20px;
+}
+</style>
+
 
 ---
 clicks: 5
@@ -284,7 +312,7 @@ table {
 
 ---
 
-## Metrics
+## Design: Metrics
 
 <img class="mt-8" src="../assets/application_execution_lifecycle.png" />
 
@@ -338,22 +366,12 @@ table {
 layout: two-cols-header
 ---
 
-## Experiment Design
+## Design: Benchmark Programms
 
 <div class="m-4" />
 
 ::left::
-
-Average of **5** Executions.
-
-**Hardware:** Adafruit Feather nRF52840 Sense
-- CPU: ARM Cortex M4F (64 MHz)
-- 1 MB flash
-- 256 KB SRAM
-
-::right::
-
-**Benchmark Programs:** Subset of Embench IoT 2.0 
+Subset of Embench IoT 2.0 
 
 *Static Memory*
 - xgboost
@@ -365,7 +383,36 @@ Average of **5** Executions.
 - tarfind
 
 
+<!--
+Each Programm is **modified** to run on the virtual machine.
+Femto-Container and µBPF do **not** offer a **heap** region for dynamic memory allocations.
+-->
 
+---
+layout: two-cols-header
+---
 
+## Implementation
 
+::left::
 
+<div class="flex justify-center flex-col h-full">
+
+- **Code Size**: file size of the executable
+- **Flash footpring**: cosy 
+- **RAM Usage**: cosy + `malloc_monitor`
+- **Load Time + Execution Time**: ztimer
+
+Average of **5** Executions.
+</div>
+
+::right::
+
+<div class="flex justify-center flex-col h-full">
+
+**Hardware:** Adafruit Feather nRF52840 Sense
+- CPU: ARM Cortex M4F (64 MHz)
+- 1 MB flash
+- 256 KB SRAM
+
+</div>
