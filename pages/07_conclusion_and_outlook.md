@@ -43,6 +43,7 @@ Recommendations for Use Cases:
 <!--
 Add **Capabilites** not supported by native hardware. Solve challenges mentioned at the beginning.
 <br />
+<br />**Perf Ccost**
 <br />**Runtime**: Best case (16x)
 <br />**Load Time**: => add startup latency
 <br />RAM usage + Flash Footprint increases
@@ -51,4 +52,7 @@ Add **Capabilites** not supported by native hardware. Solve challenges mentioned
 <br />**WAMR** => fastest runtime / two modes flexibility / moderate memory requirements
 <br />**Lua** => Lua by far **fastes execution time** among dynamic VMs (except for string operations) 
 <br />**Femto-Container** => low-memory  / **BUT:** reduced features i.e. **no** heap
+<br /> 
+<br /> Examine **impact** of different hardware architectures on perf
+<br /> extend the set of evaluated VM
 -->

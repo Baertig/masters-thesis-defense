@@ -96,7 +96,7 @@ layout: full
 
 <!--
 **Start:** All candidates are HLL VMs 
-<br />**first row** are dynamic script languages, input to the engine is text-based source code
+<br />**first row** are dynamic script languages, **input** to the engine is **text-based** script code
 <br /> JerryScript and Micropython ==> specifically designed for low-resource devices
 <br />Lua => lightweight language by design  
 

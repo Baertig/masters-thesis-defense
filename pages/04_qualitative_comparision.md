@@ -73,9 +73,9 @@ ol > li {
     </div>
     <div>
         <material-symbols-security class="text-6xl w-full font-center"/>
-        <strong>Security</strong>
+        <strong>3. Security</strong>
         <ul>
-            <li>3. Address Space Isolation</li>
+            <li>Address Space Isolation</li>
             <li>...</li>
         </ul>
     </div>
