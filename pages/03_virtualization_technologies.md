@@ -12,14 +12,10 @@ layout: two-cols-header
 <div class="py-8" />
 
 **Categorization** by J. E. Smith and Nair (2005)
-<div class="taxonomy grid gap-x-4 gap-y-8 text-center">
-    <div class="border rounded-md py-2">Same ISA</div>
-    <div class="py-2">vs.</div>
-    <div class="border rounded-md py-2">Different ISA</div>
-    <div class="border rounded-md py-2">System VM</div>
-    <div class="py-2">vs.</div>
-    <div class="border rounded-md py-2">Process VM</div>
-</div>
+- Classic System VMs
+- Whole System VMs
+- OS-Level Container
+- High-Level Virtual Machine
 
 ::right::
 <div class="h-full flex flex-col items-center justify-center">
@@ -63,21 +59,16 @@ clicks: 5
 
 
 <div class="virtualizations">
-    <div />
-    <div class="text-center">Same ISA</div>
-    <div class="text-center">Different ISA</div>
-    <div class="flex justify-center items-center">System VM</div>
-    <div class="flex justify-center items-center"><img :class="{gray: $clicks > 1}" src="../assets/classic-system-vm.png" /></div>
-    <div class="flex justify-center items-center"><img :class="{gray: $clicks > 2}"src="../assets/whole-system-vm.png" /></div>
-    <div class="flex justify-center items-center">Process VM</div>
-    <div class="flex justify-center items-center"><img :class="{gray: $clicks > 3}" src="../assets/os-level-container.png"/></div>
-    <div class="flex justify-center items-center"><img src="../assets/high-level-language-vm.png"/></div>
+    <div class="flex justify-center flex-col items-center"><img :class="{gray: $clicks > 1}" src="../assets/classic-system-vm.png" /> </div>
+    <div class="flex justify-center flex-col items-center"><img :class="{gray: $clicks > 2}"src="../assets/whole-system-vm.png" /></div>
+    <div class="flex justify-center flex-col items-center"><img :class="{gray: $clicks > 3}" src="../assets/os-level-container.png"/></div>
+    <div class="flex justify-center flex-col items-center"><img src="../assets/high-level-language-vm.png"/></div>
     <Spotlight
         :active-clicks="[1,2,3,4]"
-        :x="[20.5,65.2,20.5,65.2]"
-        :y="[13,9.5,60,66.5]"
-        :w="[24.5,24.5,24.5,24.5]"
-        :h="[37,44.5,30.5,22]"
+        :x="[12,62.2,12,62.2]"
+        :y="[6,3,56.5,64]"
+        :w="[25.2,25,25.2,24.8]"
+        :h="[41.5,48,33.7,24]"
     />
 </div>
 
@@ -85,8 +76,9 @@ clicks: 5
 .virtualizations {
     position: relative;
     display: grid;
-    grid-template-columns: auto 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin-top: 32px;
+    font-size: 14px;
 }
 
 img {
@@ -100,10 +92,10 @@ img {
 </style>
 
 <!--
-**Same ISA System VM:** VMware, Virtualbox, relies on CPU extension like Intel-V
-<br />**Different ISA System VM:** QEMU, emulates **different** hardware target, to complex for constrained devices **cpu** / **memory**
-<br />**Same ISA Process VM:** Docker, LXC: rely on special operating system mechanisms
-<br />**Different ISA Process VM:** Java VM, don't have to emulate a whole other hardware with all its state, but only keep state for executing a single program => efficient 
+**Classic System VM:** VMware, Virtualbox, relies on CPU extension like Intel-V
+<br />**Whole System VM** QEMU, emulates **different** hardware target, to complex for constrained devices **cpu** / **memory**
+<br />**OS-Level Container:** Docker, LXC: rely on special operating system mechanisms
+<br />**HLL VM:** Java VM, don't have to emulate a whole other hardware with all its state, but only keep state for executing a single program => efficient 
 
 <br /> **Only** feasible solution
 
