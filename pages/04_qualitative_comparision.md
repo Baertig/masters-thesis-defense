@@ -139,9 +139,9 @@ hideInToc: true
         <table style="position: relative; overflow: hidden">
             <Spotlight 
                 :active-clicks="[2,3,4,5]" 
-                :x="[31.2, 48.2, 61, 86.2]" 
+                :x="[25, 43.4, 57.5, 85.4]" 
                 :y="[5, 5, 5, 5]" 
-                :w="[4.5, 4.5, 4.5, 14]" 
+                :w="[4.5, 4.5, 4.5, 15]" 
                 :h="[95, 95, 95, 95]" 
             />
             <thead>
