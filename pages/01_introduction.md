@@ -26,10 +26,9 @@ Deployment Domains:
     <img src="../assets/connected_devices_forcast.png" width="400px"/>
 </div>
 
-<span class="absolute bottom-12 right-2 text-xs max-w-md">Data from: IoT Analytics (Oct. 2025). State of IoT 2025. en-US. URL: https://iot-analytics.com/number-connected-iot-devices/ (visited on 11/25/2025).</span>
+<span class="absolute bottom-12 right-2 text-xs max-w-md">Data from: IoT Analytics (Oct. 2025). State of IoT 2025. en-US. URL: https://iot-analytics.com/number-connected-iot-devices/ (visited on 01/05/2026).</span>
 
 
-<!-- limited resources 10kb to view hundred RAM; limited capabilities| From simple sensor value reading to **installing third-party** Apps during runtime -->
 <style>
  .domain {
     text-align: center;
@@ -47,8 +46,8 @@ Deployment Domains:
 </style>
 
 <!--
-Application Complexity developers face = more states / control flow / asynchronous  
-network conditions / heterogeneous devices
+limited resources 10kb to few hundred RAM; <br />
+this trend increases the application complexity.
 -->
 
 ---
@@ -121,10 +120,10 @@ layout: full
 </style>
 
 <!--
-**RIOT OS** supports six solutions,
-**Benefits:** Ease development + more security,
-**Memory Isolation:** Important for constrained devices, because they lack hardware enforced isolation.
-**Lack of Evaluations** ... to understand the trade-offs and pick the most suitable candidate for a use case
+**Benefits:** increase security + Ease development process
+<br />**Memory Isolation:** Important for constrained devices, because they lack hardware enforced isolation.
+<br /> **RIOT OS** supports six solutions,
+<br />**Lack of Evaluations** ... hard for developers to make a **informed** data-drive decision, which virtualization to pick.
 -->
 
 ---
@@ -135,8 +134,8 @@ hide: false
 
 <div class="goals grid grid-cols-3 gap-8">
     <div><img src="../assets/classify_approaches.png" /><span>Classify virtualization approaches</span></div>
-    <div><img src="../assets/comparision_properties.png" /><span>Find relevant Comparison Properties</span></div>
-    <div><img src="../assets/identify_tradeoffs.png" /><span>Identify Trade-offs</span></div>
+    <div><img src="../assets/comparision_properties.png" /><span>Find relevant comparison metrics</span></div>
+    <div><img src="../assets/identify_tradeoffs.png" /><span>Identify trade-offs</span></div>
 </div>
 
 <v-click>
@@ -185,6 +184,12 @@ hide: false
 </style>
 
 <!--
-**Qualitative** comparison on the provided capabilities of a broad set of virtualization technologies.
-**Empirical:** Quantify the Performance Overhead
+**metrics** => basis for the decision of the developer
+<br />**trade-off** that each virtualization technology makes
+<br />
+<br /> I want to reach these goals by first: 
+<br />**Qualitative** comparison on the provided **capabilities** of a broad set of virtualization technologies.
+<br />**Empirical:** Quantify the Performance Overhead
+<br />
+<br />**End:** Before I come to, that I am going to provide some **context** about virtualization **in general**
 -->

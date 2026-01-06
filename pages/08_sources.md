@@ -5,7 +5,7 @@ zoom: 0.7
 
 # Sources
 
-IoT Analytics (Oct. 2025). State of IoT 2025. en-US. URL: https://iot-analytics.com/number-connected-iot-devices/ (visited on 11/25/2025)
+IoT Analytics (Oct. 2025). State of IoT 2025. en-US. URL: https://iot-analytics.com/number-connected-iot-devices/ (visited on 01/05/2026)
 
 Popek, Gerald J and Robert P Goldberg (Jan. 1974). “Formal requirements for virtualizable third generation architectures”. en. In: Communications of the ACM 17.7
 

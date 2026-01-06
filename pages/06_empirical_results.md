@@ -16,8 +16,9 @@
 </TwoColAnimated>
 
 <!--
-**y-axis:** size in bytes  |  **x-axis**: each VM, grouped by type and benchmark.  
-constant from the crc_32 benchmark
+**y-axis:** size in bytes 
+<br /> **x-axis**: each VM, grouped by type and benchmark.  
+<br /> constant from the crc_32 benchmark [one byte per char or digit]
 -->
 
 ---
@@ -48,7 +49,11 @@ clicks: 3
     </template>
 </TwoColAnimated>
 
-<!--**Dynamic VMs** include compiler, garbage collection + type handling logic | **femto container** => minimal implementation without data relocations-->
+<!--
+**y-axis:** size of the elf file divided in Kernel, Runtime and Application
+<br />**Dynamic VMs** include compiler, garbage collection + type handling logic 
+<br /> **femto container** => minimal implementation without data relocations
+-->
 
 ---
 
@@ -74,8 +79,11 @@ clicks: 3
 </TwoColAnimated>
 
 <!--
-**WAMR**: moderate RAM usage => runtime structures occupy more space  
-Why is µBPF only blue? all allocations are done on the system stack / this could only be assigned one label. It is not precise.
+**y-axis:** RAM usage in bytes
+<br  />**WAMR**: moderate RAM usage => runtime structures occupy more space  
+<br /> Data = predefined variables
+
+<br /> Why is µBPF only blue? all allocations are done on the system stack / this could only be assigned one label. It is not precise.
 -->
 
 ---
@@ -91,7 +99,7 @@ clicks: 3
         <ul>
             <li>Load Time of dynamic VMs <strong>orders of magnitude</strong> higher</li>
             <li><strong>Reason:</strong> Bytecode compilation overhead</li>
-            <li>WAMR (fast) longest load time of <strong>static VMs</strong></li>
+            <li>WAMR (fast) highest load time of <strong>static VMs</strong></li>
         </ul>
     </span>
   </template>
@@ -109,6 +117,12 @@ clicks: 3
 
 </TwoColAnimated>
 
+<!--
+**y-axis:** load time in µs as a log scale
+<br /> Example **xgboost** lua (lowest) 35x slow than WAMR (fast) (highest) 
+
+<br /> WAMR (fast) highest load time due to **bytecode translation**
+-->
 
 ---
 clicks: 4
@@ -139,3 +153,7 @@ clicks: 4
         <img src="../assets/execution_time_to_native.png"/>
     </template>
 </TwoColAnimated>
+
+<!--
+**y-axis:** Displays the slowdown compared to native execution of the benchmark program on **RIOT OS**
+-->

@@ -28,12 +28,17 @@ hideInToc: true
 ::right::
 
 1. Introduction
-2. Background
+2. Background on Virtualization
 3. Qualitative Comparision
 4. Empirical Evaluation
 5. Conclusion & Outlook
 
-<!--**Backround:** Context on Virtuaization approaches-->
+<!--
+**Backround:** Context on relevant Virtualization approaches
+<br />**Qualitative Comparision:** Examines Features of Virtuatization solutions
+<br /> **Empirical Evaluation:** Measure the performance overhead (introduced) | Presentation 
+<br /> Presentation **ends with** ....
+-->
 
 ---
 src: ./pages/01_introduction.md
@@ -70,6 +75,3 @@ src: ./pages/08_sources.md
 ---
 src: ./pages/09_appendix.md
 ---
-
-
-

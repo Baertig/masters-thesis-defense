@@ -10,7 +10,6 @@ layout: full
         <ol>
             <li>Feature Categories</li>
             <li>Summary Table</li>
-            <li>Key Insights</li>
         </ol>
     </div>
 </div>
@@ -44,6 +43,13 @@ ol > li {
     height: 100%;
 }
 </style>
+
+<!--
+**Start:** focus on features (16 in total)
+<br /> across **4** different categories => briefly present each + one example feature of each
+<br /> table + insights that can be drawn from it.
+-->
+
 ---
 
 ## Feature Categories
@@ -51,7 +57,7 @@ ol > li {
 <div class="grid grid-cols-2 gap-4 m-t-8 categories">
     <div>
         <material-symbols-code class="text-6xl w-full font-center"/>
-        <strong class="font-center">Development</strong>
+        <strong class="font-center">1. Development</strong>
         <ul>
             <li>Automatic Memory Management</li>
             <li>...</li>
@@ -59,7 +65,7 @@ ol > li {
     </div>
     <div>
         <material-symbols-engineering class="text-6xl w-full font-center"/>
-        <strong>Operational</strong>
+        <strong>2. Operational</strong>
         <ul>
             <li>Updates At Runtime</li>
             <li>...</li>
@@ -69,13 +75,13 @@ ol > li {
         <material-symbols-security class="text-6xl w-full font-center"/>
         <strong>Security</strong>
         <ul>
-            <li>Address Space Isolation</li>
+            <li>3. Address Space Isolation</li>
             <li>...</li>
         </ul>
     </div>
     <div>
         <material-symbols-memory class="text-6xl w-full font-center"/>
-        <strong>Compilation Modes</strong>
+        <strong>4. Compilation Modes</strong>
         <ul>
             <li>JIT Compilation</li>
             <li>...</li>
@@ -95,6 +101,18 @@ ol > li {
     }
 </style>
 
+<!--
+**1. Cat**: Features that ease development
+<br /> ... he doesn't have to implement allocations / deallocations **manually**
+<br />**2. Cat** decrease the effort of maintenance and operating 
+<br />...  update behavior of the device without a **full reboot** (at runtime)
+<br />**3. Cat** Increase Security
+<br />... limit the address space a device can access
+<br /> constrained device usually only **limited hardware** mechanisms to implement this
+<br />**4. Cat**  
+
+**End:**
+-->
 
 ---
 hideInToc: true
@@ -135,7 +153,7 @@ hideInToc: true
                     <th colspan="2">Compilation</th>
                 </tr>
                 <tr>
-                    <th>Virtualization Technology</th>
+                    <th>Virtual Machine</th>
                     <th><div class="vertical-text">Automatic Memory Management</div></th>
                     <th><div class="vertical-text">Portability of the Executable</div></th>
                     <th><div class="vertical-text">Hardware Abstraction Layer</div></th>
@@ -247,9 +265,8 @@ tbody tr:nth-child(even) {
 </style>
 
 <!--
-**Generally** operational and development features vary between solution | 
-**Universally Provided:** Application Portability, Updates at Runtime | **Address Space Isolation:** implemented by all except MicroPython, **AOT** is supported by some, ahowever not solution supports JIT. 
-
+left-most column displays each evaluated virtual machine 
+<br />**Generally** operational and development features vary between solution
+<
+<br />**Universally Provided:** Application Portability, Updates at Runtime | **Address Space Isolation:** implemented by all except MicroPython, **AOT** is supported by some, ahowever not solution supports JIT.
 -->
-
-    

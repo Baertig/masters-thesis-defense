@@ -11,7 +11,7 @@ layout: full
             <li>Candidate Introduction </li>
             <li>Classification </li>
             <li>HLL VM Architecture </li>
-            <li>Experiment 
+            <li>Benchmark 
                 <ol>
                     <li>Design</li>
                     <li>Implementation</li>
@@ -48,6 +48,12 @@ layout: full
 }
 </style>
 
+<!--
+**classify** into two groups
+<br /> present basic architecture shared by **all** => basis to understand the (nature of the) overhead
+<br
+-->
+
 ---
 
 ## Candidates
@@ -58,7 +64,7 @@ layout: full
     <div class="dynamic"><logos-lua />Lua</div>
     <div class="static"><img src="../assets/ebpf-log.svg"/>Femto-Container</div>
     <div class="static"><img src="../assets/ebpf-log.svg"/>µBPF</div>
-    <div class="static"><logos-webassembly /><span class="text-center"><strong>W</strong>eb<strong>A</strong>ssembly <strong>M</strong>icro <strong>R</strong>untime</span></div>
+    <div class="static"><logos-webassembly /><span class="text-center"><strong>W</strong>eb<strong>A</strong>ssembly <strong>M</strong>icro <strong>R</strong>untime (WAMR)</span></div>
 </div>
 
 <style>
@@ -87,6 +93,19 @@ layout: full
 }
 
 </style>
+
+<!--
+**Start:** All candidates are HLL VMs 
+<br />**first row** are dynamic script languages, input to the engine is text-based source code
+<br /> JerryScript and Micropython ==> specifically designed for low-resource devices
+<br />Lua => lightweight language by design  
+
+<br />**second row** all execute a form of pre-compiled bytecode
+<br /> **Femto and µBPF** => research projects, ebpf, introduced in **Linux Kernel**, lightweight VM, 11 registers, 512-byte stack, **no heap**
+<br /> WAMR => executes WebAssembly, compilation target for the browser, uses as **general-purpose** compilation target, with runtimes targeting different environments including constrained devices. **Two Modes** (evaluated separatly)
+
+**End:** These six candidates **divided** into two categories
+-->
 
 ---
 clicks: 4
@@ -230,6 +249,18 @@ table {
 
 </style>
 
+<!--
+**Start:** This table shows this **Categorization**
+<br /> first column are the HLLVMs
+<br /> then the architecutral properties, that are the reason for this classification
+<br /> Feature-Counts from previous evaluation per feature category
+
+<br /> **dynamic** => runtime object carry metadata information
+<br /> source code compiled to **bytecode** 
+
+**End:** All share the same **fundamental structure**
+-->
+
 ---
 
 ## Fundamental HLL VM Architecture
@@ -238,8 +269,14 @@ table {
     <img src="../assets/VM architecture.png" width="500px"/>
 </div>
 
-<!--There is a basic structure, that all of the VMs **share**. Classification + Useful to understand the results later on-->
+<!--
+**Start:** Bytecode Interpreter
+<br /> execute bytecode instruction (opcode -> number; operands)
+<br /> **processed** in 3 step **pipeline**
+<br /> One of the main reason for overhead, executed for **every** instruction; for **native** programms done in hardware
 
+<br />**End:** To measure the **exect** overhead => conducted **Benchmark**
+-->
 
 ---
 layout: full
@@ -247,7 +284,7 @@ layout: full
 
 <div class="container">
     <div class="heading">
-        <h2>Experiment</h2>
+        <h2>Benchmark</h2>
     </div>
     <div class="agenda">
         <ol>
@@ -296,6 +333,10 @@ layout: full
     height: 100%;
 }
 </style>
+
+<!--
+**Start:** The metrics were **derived** from t
+-->
 
 ---
 
@@ -347,7 +388,15 @@ layout: full
 }
 </style>
 
-<!--- Benchmarks + Metrics-->
+<!--
+**Start:** The metrics were **derived** from simple **Deployment Pipeline** (steps necessary to get the application to the device) 
+<br /> first produce a runable application artifact => how large is this. 
+<br /> flash to device => footprint of the whole firmware image. 
+<br /> then **Execution** RAM usage, measure runtime overhead in **2** metrics. How long does it take until the **first instruction** of the application is executed. 
+<br /> **Execution** => how long to complete the workload.    
+
+<br />**End:** ... which brings me to the benchmark programs.
+-->
 
 ---
 layout: two-cols-header
@@ -375,10 +424,10 @@ Subset of Embench IoT 2.0
     <img src="../assets/embench-iot-2-0.png" width="250px" />
 </div>
 
-
 <!--
-Each Programm is **modified** to run on the virtual machine.
-Femto-Container and µBPF do **not** offer a **heap** region for dynamic memory allocations.
+**Start:** Designed to represent a set of benchmarks written in C, that represent common IoT Workloads. 
+<br /> Each Programm is **modified** to run on the virtual machine.
+<br /> Femto-Container and µBPF do **not** offer a **heap** region for dynamic memory allocations.
 -->
 
 ---
@@ -390,6 +439,8 @@ layout: two-cols-header
 ::left::
 
 <div class="flex justify-center flex-col h-full">
+
+Implemented Measurements on top of **RIOT OS**
 
 - **Code Size**: file size of the executable
 - **Flash footpring**: cosy 
@@ -409,3 +460,8 @@ Average of **5** Executions.
 - 256 KB SRAM
 
 </div>
+
+<!--
+**Start:** All of the Virtual Machines run on top of RIOT OS. **Common Baseline** 
+<br /> => enables a fair comparison
+-->

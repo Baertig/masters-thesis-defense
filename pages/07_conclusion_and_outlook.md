@@ -13,7 +13,7 @@ Universal Features:
 - Updates at Runtime
 - Memory Isolation
 
-<v-click at="3">
+<v-click at="2">
 
 **Outlook**
 
@@ -25,7 +25,7 @@ Universal Features:
 
 ::right::
 
-<v-click at="2">
+<v-click at="1">
 
 **Empirical Evaluation**
 
@@ -40,3 +40,6 @@ Recommendations for Use Cases:
 
 </v-click>
 
+<!--
+Add **Capabilites** not supported by native hardware. Solve challenges mentioned at the beginning.
+-->

@@ -11,7 +11,7 @@ layout: two-cols-header
 
 <div class="py-8" />
 
-**Taxonomy** by J. E. Smith and Nair (2005)
+**Categorization** by J. E. Smith and Nair (2005)
 <div class="taxonomy grid gap-x-4 gap-y-8 text-center">
     <div class="border rounded-md py-2">Same ISA</div>
     <div class="py-2">vs.</div>
@@ -42,14 +42,24 @@ p:first-child {
 }
 </style>
 
-<!-- **ISA:** memory model + instruction (e.g. add, sub, ...) | **Same** => more efficient, but hardware isolation mechanism -->
-
+<!--
+**Virtualization** divides a system into guest + host
+<br /> This new Layer is an opportunity to add new features.  
+<br /> 
+<br /> different kind of each **implementations** 
+<br /> following this categorization each can be assigned on of **four** types / approach
+<br /> only one approach is relevant to constrained devices
+<br /> categorization is based on **two properties**
+<br />**ISA:** memory model + instruction (e.g. add, sub, ...) 
+<br />**System** => emulates a whole system for **multiple** Applications including an OS
+<br />
+-->
 
 ---
 clicks: 5
 ---
 
-## Virtualization Taxonomy
+## Virtualization Categories
 
 
 <div class="virtualizations">
@@ -88,3 +98,14 @@ img {
     filter: grayscale(100%);
 }
 </style>
+
+<!--
+**Same ISA System VM:** VMware, Virtualbox, relies on CPU extension like Intel-V
+<br />**Different ISA System VM:** QEMU, emulates **different** hardware target, to complex for constrained devices **cpu** / **memory**
+<br />**Same ISA Process VM:** Docker, LXC: rely on special operating system mechanisms
+<br />**Different ISA Process VM:** Java VM, don't have to emulate a whole other hardware with all its state, but only keep state for executing a single program => efficient 
+
+<br /> **Only** feasible solution
+
+<br /> **End:** All the evaluated virtual machines are of *this* type
+-->
