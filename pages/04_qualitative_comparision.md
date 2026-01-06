@@ -111,7 +111,7 @@ ol > li {
 <br /> constrained device usually only **limited hardware** mechanisms to implement this
 <br />**4. Cat**  
 
-**End:**
+**End:** The **complete** feature evaluation is now presented in...
 -->
 
 ---
@@ -267,6 +267,8 @@ tbody tr:nth-child(even) {
 <!--
 left-most column displays each evaluated virtual machine 
 <br />**Generally** operational and development features vary between solution
-<
-<br />**Universally Provided:** Application Portability, Updates at Runtime | **Address Space Isolation:** implemented by all except MicroPython, **AOT** is supported by some, ahowever not solution supports JIT.
+ <br /> **Universal Features**
+<br /> Compilation Modes
+<br /> **End:** To understand how the *provided* features influence performance a benchmark was conducted
+<br /> on the **six** VMs provided by **RIOT OS**
 -->
