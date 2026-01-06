@@ -17,8 +17,8 @@ Universal Features:
 
 **Outlook**
 
-- Additional hardware boards
-- Additional virtualization technologies
+- Vary hardware targets
+- Add virtualization technologies
 - Explore on-board AOT compilation capabilities
 
 </v-click>
@@ -42,4 +42,13 @@ Recommendations for Use Cases:
 
 <!--
 Add **Capabilites** not supported by native hardware. Solve challenges mentioned at the beginning.
+<br />
+<br />**Runtime**: Best case (16x)
+<br />**Load Time**: => add startup latency
+<br />RAM usage + Flash Footprint increases
+<br />VMs offer different trade-offs => There is not one solution for all use-cases
+<br />
+<br />**WAMR** => fastest runtime / two modes flexibility / moderate memory requirements
+<br />**Lua** => Lua by far **fastes execution time** among dynamic VMs (except for string operations) 
+<br />**Femto-Container** => low-memory  / **BUT:** reduced features i.e. **no** heap
 -->
