@@ -308,8 +308,6 @@ layout: full
     </div>
 </div>
 
-<!--**Comparison** Based on the Implemented Features, **Table:** cannot cover all of it => focus on *key* insights.-->
-
 <style>
 .heading {
     display: flex;
@@ -335,7 +333,9 @@ layout: full
 </style>
 
 <!--
-**Start:** The metrics were **derived** from t
+**Start:** ....
+
+<br />Detail for each metric the results
 -->
 
 ---
@@ -389,8 +389,8 @@ layout: full
 </style>
 
 <!--
-**Start:** The metrics were **derived** from simple **Deployment Pipeline** (steps necessary to get the application to the device) 
-<br /> first produce a runable application artifact => how large is this. 
+**Start:** To find relevant criteria: look at simple **Deployment Pipeline** (steps necessary to get the application to the device)
+<br /> first produce a runable application artifact => how efficient is the **application encoded**
 <br /> flash to device => footprint of the whole firmware image. 
 <br /> then **Execution** RAM usage, measure runtime overhead in **2** metrics. How long does it take until the **first instruction** of the application is executed. 
 <br /> **Execution** => how long to complete the workload.    
@@ -443,7 +443,7 @@ layout: two-cols-header
 Implemented Measurements on top of **RIOT OS**
 
 - **Code Size**: file size of the executable
-- **Flash footpring**: cosy 
+- **Flash footprint**: cosy 
 - **RAM Usage**: cosy + `malloc_monitor`
 - **Load Time + Execution Time**: ztimer
 
