@@ -18,6 +18,8 @@
 <!--
 **y-axis:** size in bytes 
 <br /> **x-axis**: each VM, grouped by type and benchmark.  
+
+<br />source code of **Dynamic VMs:* contain whitespace, variable names, and **data encoding less efficient**
 <br /> constant from the crc_32 benchmark [one byte per char or digit]
 -->
 
@@ -125,7 +127,7 @@ clicks: 3
 -->
 
 ---
-clicks: 4
+clicks: 7
 ---
 
 ## Results: Execution Time
@@ -149,6 +151,13 @@ clicks: 4
             :y="[5,70]" 
             :w="[13.5,2.5]" 
             :h="[86, 20]" 
+        />
+        <Spotlight
+            :active-clicks="[5,6]" 
+            :x="[4,84]" 
+            :y="[5,5]" 
+            :w="[78, 13.5]" 
+            :h="[89,86]" 
         />
         <img src="../assets/execution_time_to_native.png"/>
     </template>
